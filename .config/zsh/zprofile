@@ -7,7 +7,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 xdg-settings set default-web-browser brave-browser.desktop
 export BROWSER='brave'
 export EDITOR='nvim'
-export PAGER='nvim +Man!'
+export PAGER='less'
 export MANPAGER='nvim +Man!'
 export READER='zathura'
 export TERMINAL='st'
