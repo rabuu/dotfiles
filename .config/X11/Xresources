@@ -1,0 +1,167 @@
+/*  				*/
+/*  	COLORS 		*/
+/*  				*/
+
+/* MAIN COLOR SCHEME */
+
+! gruvbox-like
+#define COL_MN_BG 			#282828 		/* background */
+#define COL_MN_FG 			#ebebc5 		/* foreground */
+
+#define COL_MN_0 			#1d2021 		/* black */
+#define COL_MN_1 			#dd241d 		/* red */
+#define COL_MN_2 			#98971a 		/* green */
+#define COL_MN_3 			#d79921 		/* yellow */
+#define COL_MN_4 			#4385d9 		/* blue */
+#define COL_MN_5 			#c162a5 		/* magenta */
+#define COL_MN_6 			#689da6 		/* cyan */
+#define COL_MN_7 			#b9baa5 		/* white */
+
+#define COL_MN_8 			#928374 		/* light black */
+#define COL_MN_9 			#fb4934 		/* light red */
+#define COL_MN_10 			#b8bb26 		/* light green */
+#define COL_MN_11 			#fabd2f 		/* light yellow */
+#define COL_MN_12 			#73a9f9 		/* light blue */
+#define COL_MN_13 			#e386cb 		/* light magenta */
+#define COL_MN_14 			#7ed2d2 		/* light cyan */
+#define COL_MN_15 			#ebebc5 		/* light white */
+
+
+/* THEME */
+#define COL_DK_1	 		COL_MN_BG
+#define COL_DK_2 			COL_MN_0
+#define COL_DK_3		 	COL_MN_8
+
+#define COL_LT_1 			COL_MN_1
+#define COL_LT_2 			COL_MN_FG
+#define COL_LT_3 			COL_MN_7
+
+
+/* TERMINAL COLORS */
+#define COL_TM_0 			COL_MN_0
+#define COL_TM_1 			COL_MN_1
+#define COL_TM_2 			COL_MN_2
+#define COL_TM_3 			COL_MN_3
+#define COL_TM_4 			COL_MN_4
+#define COL_TM_5 			COL_MN_5
+#define COL_TM_6 			COL_MN_6
+#define COL_TM_7 			COL_MN_7
+
+#define COL_TM_8 			COL_MN_8
+#define COL_TM_9 			COL_MN_9
+#define COL_TM_10 			COL_MN_10
+#define COL_TM_11 			COL_MN_11
+#define COL_TM_12 			COL_MN_12
+#define COL_TM_13 			COL_MN_13
+#define COL_TM_14 			COL_MN_14
+#define COL_TM_15 			COL_MN_15
+
+#define COL_TM_FG 			COL_MN_FG
+#define COL_TM_BG 			COL_MN_BG
+
+
+/* Specific colors */
+#define COL_RED				COL_MN_1
+
+
+
+/*  				*/
+/*  	FONTS 		*/
+/*  				*/
+
+
+#define FONT_MN JetBrains Mono:size=13
+#define FONT_TM JetBrains Mono:pixelsize=13:antialias=true:autohint=true
+
+
+/* 						*/
+/* 		SET VALUES 		*/
+/* 						*/
+
+! standard colors
+color0: COL_MN_0
+color1: COL_MN_1
+color2: COL_MN_2
+color3: COL_MN_3
+color4: COL_MN_4
+color5: COL_MN_5
+color6: COL_MN_6
+color7: COL_MN_7
+color8: COL_MN_8
+color9: COL_MN_9
+color10: COL_MN_10
+color11: COL_MN_11
+color12: COL_MN_12
+color13: COL_MN_13
+color14: COL_MN_14
+color15: COL_MN_15
+
+background: COL_MN_BG
+foreground: COL_MN_FG
+
+
+
+! dmenu
+dmenu.font: FONT_MN
+dmenu.background : COL_DK_1
+dmenu.foreground : COL_LT_1
+dmenu.selbackground : COL_DK_1
+dmenu.selforeground : COL_LT_2
+
+! dwm
+dwm.normbordercolor: COL_DK_2
+dwm.normbgcolor: COL_DK_1
+dwm.normfgcolor: COL_LT_1
+dwm.selbordercolor: COL_LT_1
+dwm.selbgcolor: COL_DK_1
+dwm.selfgcolor: COL_LT_2
+dwm.borderpx: 2
+dwm.snap: 32
+dwm.showbar: 1
+dwm.topbar: 0
+dwm.nmaster: 1
+dwm.resizehints: 1
+dwm.mfact: 0.55
+dwm.mainfont: FONT_MN
+dwm.gappx: 10
+
+! st
+st.font: FONT_TM
+st.color0: COL_TM_0
+st.color1: COL_TM_1
+st.color2: COL_TM_2
+st.color3: COL_TM_3
+st.color4: COL_TM_4
+st.color5: COL_TM_5
+st.color6: COL_TM_6
+st.color7: COL_TM_7
+st.color8: COL_TM_8
+st.color9: COL_TM_9
+st.color10: COL_TM_10
+st.color11: COL_TM_11
+st.color12: COL_TM_12
+st.color13: COL_TM_13
+st.color14: COL_TM_14
+st.color15: COL_TM_15
+st.background: COL_TM_BG
+st.foreground: COL_TM_FG
+st.cursorColor: COL_TM_FG
+
+! slock
+slock.colorInit: COL_DK_1
+slock.colorInput: COL_DK_3
+slock.colorFailed: COL_RED
+
+! dwmblocks
+dwmblocks.tagcolor: COL_LT_2
+dwmblocks.hostanduser_col: COL_DK_3
+dwmblocks.keyboard_layout_col: COL_MN_10
+dwmblocks.network_col: COL_MN_3
+dwmblocks.volume_col: COL_MN_4
+dwmblocks.memory_col: COL_MN_5
+dwmblocks.date_col: COL_MN_14
+
+! polybar
+polybar.primary: COL_LT_1
+polybar.secondary: COL_LT_2
+polybar.alert: COL_RED
