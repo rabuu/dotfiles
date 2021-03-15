@@ -1,7 +1,0 @@
-#!/bin/sh
-
-volume=$(pamixer --get-volume)
-
-speakers=$(pamixer --get-mute | sed 's/false/A/;s/true/M/')
-
-printf ' ^c#EBDBB2^VOL ^c#B16286^%3s%% %s %s ' "$volume" "$speakers"

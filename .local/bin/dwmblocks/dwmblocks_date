@@ -1,5 +1,0 @@
-#!/bin/sh
-
-time=$(date '+%a - %d. %b %Y - %R:%S')
-
-printf ' ^c#EBDBB2^DAT ^c#56B7A5^%s ' "$time"
