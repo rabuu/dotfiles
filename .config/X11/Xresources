@@ -160,8 +160,3 @@ dwmblocks.network_col: COL_MN_3
 dwmblocks.volume_col: COL_MN_4
 dwmblocks.memory_col: COL_MN_5
 dwmblocks.date_col: COL_MN_14
-
-! polybar
-polybar.primary: COL_LT_1
-polybar.secondary: COL_LT_2
-polybar.alert: COL_RED
