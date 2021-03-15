@@ -1,23 +1,46 @@
-" menu navigation
-noremap <M-h> <C-w>h
-noremap <M-j> <C-w>j
-noremap <M-k> <C-w>k
-noremap <M-l> <C-w>l
+" leader key
+nnoremap <space> <nop>
+let g:mapleader="\<space>"
 
-" tab completion
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" toggle spell checking
+map <leader>s :setlocal spell! spelllang=en_us,de_20<cr>
+
+" disable highlighting search results
+nnoremap // :nohlsearch<cr>
 
 " better tabbing
 vnoremap < <gv
 vnoremap > >gv
 
-" macro over visual range
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+" move between splits
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
-function! ExecuteMacroOverVisualRange()
-  echo "@".getcmdline()
-  execute ":'<,'>normal @".nr2char(getchar())
+" show documentation
+nnoremap <silent> K :call <sid>show_documentation()<cr>
+
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+		call CocActionAsync('doHover')
+	else
+		execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
 endfunction
 
-" clear search highlighting
-nnoremap <C-l> :nohlsearch<CR>
+" go to definition
+nmap <silent>gd <plug>(coc-definition)
+
+" rename symbol
+nmap <leader>r <plug>(coc-rename)
+
+" macro over range
+xnoremap @ :<c-u>call ExecuteMacroOverVisualRange()<cr>
+
+function! ExecuteMacroOverVisualRange()
+	echo "@".getcmdline()
+	execute ":'<,'>normal @".nr2char(getchar())
+endfunction

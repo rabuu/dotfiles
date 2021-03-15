@@ -1,36 +1,42 @@
 " plugins
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-call vundle#begin('~/.config/nvim/bundle')
+call plug#begin('~/.config/nvim/autoload')
 
-Plugin 'VundleVim/Vundle.vim'
+" language support
+Plug 'sheerun/vim-polyglot'
+Plug 'rust-lang/rust.vim'
 
-Plugin 'sheerun/vim-polyglot'
-Plugin 'dense-analysis/ale'
-Plugin 'jiangmiao/auto-pairs'
+" linting
+Plug 'dense-analysis/ale'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
-Plugin 'tpope/vim-commentary'
-
-Plugin 'ervandew/supertab'
-
-Plugin 'lervag/vimtex'
-
-Plugin 'ap/vim-css-color'
-
-Plugin 'rust-lang/rust.vim'
-
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-call vundle#end()
+" completion and snippets
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " vimtex
-let g:vimtex_view_method = 'zathura'
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+
+" coloring colors
+Plug 'ap/vim-css-color'
+
+" commentary
+Plug 'tpope/vim-commentary'
 
 " theme
-colorscheme gruvbox
+Plug 'crusoexia/vim-monokai'
+Plug 'morhetz/gruvbox'
 
 " airline
-let g:airline_theme = 'minimalist'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
+
+call plug#end()

@@ -1,0 +1,6 @@
+{
+	"clangd.semanticHighlighting": true,
+	"snippets.ultisnips.directories": ["snippets"],
+	"snippets.snipmate.enable": false,
+	"snippets.loadFromExtensions": false
+}

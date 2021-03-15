@@ -1,0 +1,264 @@
+# math
+priority 100
+
+snippet im "" w
+$${1:${VISUAL}}$$0
+endsnippet
+
+snippet dm "" w
+\\[
+	${1:${VISUAL}}
+\\]$0
+endsnippet
+
+snippet sum "" i
+\\sum^{${1:n}}_{${2:i=1}}$0
+endsnippet
+
+snippet lim "" i
+\\lim_{${1:n \\to \\infty}}$0
+endsnippet
+
+snippet lr
+\\left$1 ${2:${VISUAL}} \\right$1$0
+endsnippet
+
+snippet lra
+\\langle ${1:${VISUAL}} \\rangle$0
+endsnippet
+
+
+priority 0
+
+snippet * "" i
+\\cdot$0
+endsnippet
+
+
+# subscripts
+priority 200
+
+snippet '([A-Za-z])(\d)' "" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+snippet '([A-Za-z])_(\d\d)' "" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+
+# superscripts
+priority 200
+
+snippet sq "" i
+^2
+endsnippet
+
+snippet cu "" i
+^3
+endsnippet
+
+
+# fractions
+priority 100
+
+snippet // "" i
+\\frac{${1:${VISUAL}}}{$2}$0
+endsnippet
+
+
+priority 200
+
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)//' "" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+
+# environments
+priority 200
+
+snippet begin
+\\begin{${1:environment}}
+	${2:${VISUAL}}
+\\end{$1}$0
+endsnippet
+
+snippet center
+\\begin{center}
+	${1:${VISUAL}}
+\\end{center}$0
+endsnippet
+
+snippet item
+\\begin{itemize}
+	\\item ${1:${VISUAL}}
+\\end{itemize}$0
+endsnippet
+
+snippet enum
+\\begin{enumerate}
+	\\item ${1:${VISUAL}}
+\\end{enumerate}$0
+endsnippet
+
+snippet align
+\\begin{align${1:ed}}
+	${2:${VISUAL}}
+\\end{align$1}$0
+endsnippet
+
+snippet table
+\\begin{table}[H]
+	\\centering
+	${1:${VISUAL}}
+\\end{table}$0
+endsnippet
+
+snippet tab
+\\begin{table}[H]
+	\\centering
+	\\begin{tabular}{${1:c}}
+		${2:${VISUAL}}
+	\\end{tabular}
+\\end{table}$0
+endsnippet
+
+snippet taby
+\\begin{table}[H]
+	\\centering
+	\\begin{tabulary}{${1:\\textwidth}}{${2:c}}
+		${3:${VISUAL}}
+	\\end{tabulary}
+\\end{table}$0
+endsnippet
+
+snippet fig
+\\begin{figure}[H]
+	\\centering
+	\\includegraphics[$1]{$2}
+\\end{figure}$0
+endsnippet
+
+
+# structure
+priority 1000
+
+snippet sec
+\\section{${1:${VISUAL}}}$0
+endsnippet
+
+snippet sec*
+\\section*{${1:${VISUAL}}}$0
+endsnippet
+
+snippet ssec
+\\subsection{${1:${VISUAL}}}$0
+endsnippet
+
+snippet ssec*
+\\subsection*{${1:${VISUAL}}}$0
+endsnippet
+
+snippet sssec
+\subsubsection{${1:${VISUAL}}}$0
+endsnippet
+
+snippet sssec*
+\subsubsection*{${1:${VISUAL}}}$0
+endsnippet
+
+snippet par
+\\paragraph{${1:${VISUAL}}}$0
+endsnippet
+
+snippet spar
+\\subparagraph{${1:${VISUAL}}}$0
+endsnippet
+
+
+# commands
+priority 100
+
+snippet lab
+\\label{${1:${VISUAL}}}$0
+endsnippet
+
+snippet cap
+\\caption{${1:${VISUAL}}}$0
+endsnippet
+
+snippet i
+\\item ${0:${VISUAL}}
+endsnippet
+
+snippet id
+\\item[$1] ${0:${VISUAL}}
+endsnippet
+
+snippet en
+\\enquote{${1:${VISUAL}}}$0
+endsnippet
+
+snippet url
+\\url{${1:${VISUAL}}}$0
+endsnippet
+
+snippet href
+\\href{${1:${VISUAL}}}{$2}$0
+endsnippet
+
+snippet noi
+\\noindent$0
+endsnippet
+
+snippet new
+\newcommand{$1}[$2]{$3}$0
+endsnippet
+
+snippet use
+\usepackage[$1]{$2}$0
+endsnippet
+
+
+# text styles
+priority 100
+
+snippet te "" i
+\\text{${1:${VISUAL}}}$0
+endsnippet
+
+snippet bf "" i
+\\textbf{${1:${VISUAL}}}$0
+endsnippet
+
+snippet it "" i
+\\textit{${1:${VISUAL}}}$0
+endsnippet
+
+snippet sf "" i
+\\textsf{${1:${VISUAL}}}$0
+endsnippet
+
+snippet sc "" i
+\\textsc{${1:${VISUAL}}}$0
+endsnippet
+
+snippet rm "" i
+\\textrm{${1:${VISUAL}}}$0
+endsnippet
+
+snippet tt "" i
+\\texttt{${1:${VISUAL}}}$0
+endsnippet
+
+snippet em "" i
+\\emph{${1:${VISUAL}}}$0
+endsnippet
+
+snippet under "" i
+\\underline{${1:${VISUAL}}}$0
+endsnippet
+
+snippet over "" i
+\\overline{${1:${VISUAL}}}$0
+endsnippet
