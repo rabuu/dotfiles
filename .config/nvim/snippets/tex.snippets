@@ -8,7 +8,7 @@ endsnippet
 snippet dm "" w
 \\[
 	${1:${VISUAL}}
-\\]$0
+\\]
 endsnippet
 
 snippet sum "" i
@@ -79,64 +79,76 @@ priority 200
 
 snippet begin
 \\begin{${1:environment}}
-	${2:${VISUAL}}
-\\end{$1}$0
+	${0:${VISUAL}}
+\\end{$1}
 endsnippet
 
 snippet center
 \\begin{center}
-	${1:${VISUAL}}
-\\end{center}$0
+	${0:${VISUAL}}
+\\end{center}
 endsnippet
 
 snippet item
 \\begin{itemize}
-	\\item ${1:${VISUAL}}
-\\end{itemize}$0
+	\\item ${0:${VISUAL}}
+\\end{itemize}
+endsnippet
+
+snippet desc
+\\begin{description}
+	\\item[$1] ${0:${VISUAL}}
+\\end{description}
 endsnippet
 
 snippet enum
 \\begin{enumerate}
-	\\item ${1:${VISUAL}}
-\\end{enumerate}$0
+	\\item ${0:${VISUAL}}
+\\end{enumerate}
 endsnippet
 
 snippet align
 \\begin{align${1:ed}}
-	${2:${VISUAL}}
-\\end{align$1}$0
+	${0:${VISUAL}}
+\\end{align$1}
 endsnippet
 
 snippet table
 \\begin{table}[H]
 	\\centering
-	${1:${VISUAL}}
-\\end{table}$0
+	${0:${VISUAL}}
+\\end{table}
 endsnippet
 
 snippet tab
 \\begin{table}[H]
 	\\centering
 	\\begin{tabular}{${1:c}}
-		${2:${VISUAL}}
+		${0:${VISUAL}}
 	\\end{tabular}
-\\end{table}$0
+\\end{table}
 endsnippet
 
 snippet taby
 \\begin{table}[H]
 	\\centering
 	\\begin{tabulary}{${1:\\textwidth}}{${2:c}}
-		${3:${VISUAL}}
+		${0:${VISUAL}}
 	\\end{tabulary}
-\\end{table}$0
+\\end{table}
 endsnippet
 
 snippet fig
 \\begin{figure}[H]
 	\\centering
-	\\includegraphics[$1]{$2}
-\\end{figure}$0
+	\\includegraphics[$1]{$0}
+\\end{figure}
+endsnippet
+
+snippet frame
+\\begin{frame}
+	${0:${VISUAL}}
+\\end{frame}
 endsnippet
 
 
@@ -144,35 +156,35 @@ endsnippet
 priority 1000
 
 snippet sec
-\\section{${1:${VISUAL}}}$0
+\\section{${0:${VISUAL}}}
 endsnippet
 
 snippet sec*
-\\section*{${1:${VISUAL}}}$0
+\\section*{${0:${VISUAL}}}
 endsnippet
 
 snippet ssec
-\\subsection{${1:${VISUAL}}}$0
+\\subsection{${0:${VISUAL}}}
 endsnippet
 
 snippet ssec*
-\\subsection*{${1:${VISUAL}}}$0
+\\subsection*{${0:${VISUAL}}}
 endsnippet
 
 snippet sssec
-\subsubsection{${1:${VISUAL}}}$0
+\subsubsection{${0:${VISUAL}}}
 endsnippet
 
 snippet sssec*
-\subsubsection*{${1:${VISUAL}}}$0
+\subsubsection*{${0:${VISUAL}}}
 endsnippet
 
 snippet par
-\\paragraph{${1:${VISUAL}}}$0
+\\paragraph{${0:${VISUAL}}}
 endsnippet
 
 snippet spar
-\\subparagraph{${1:${VISUAL}}}$0
+\\subparagraph{${0:${VISUAL}}}
 endsnippet
 
 
@@ -180,11 +192,11 @@ endsnippet
 priority 100
 
 snippet lab
-\\label{${1:${VISUAL}}}$0
+\\label{${0:${VISUAL}}}
 endsnippet
 
 snippet cap
-\\caption{${1:${VISUAL}}}$0
+\\caption{${0:${VISUAL}}}
 endsnippet
 
 snippet i
@@ -200,11 +212,11 @@ snippet en
 endsnippet
 
 snippet url
-\\url{${1:${VISUAL}}}$0
+\\url{${0:${VISUAL}}}
 endsnippet
 
 snippet href
-\\href{${1:${VISUAL}}}{$2}$0
+\\href{${1:${VISUAL}}}{$0}
 endsnippet
 
 snippet noi
@@ -212,11 +224,23 @@ snippet noi
 endsnippet
 
 snippet new
-\newcommand{$1}[$2]{$3}$0
+\newcommand{$1}[$2]{$0}
 endsnippet
 
 snippet use
-\usepackage[$1]{$2}$0
+\usepackage[$1]{$0}
+endsnippet
+
+snippet only
+\only<$1>{
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet uncover
+\uncover<$1>{
+	${0:${VISUAL}}
+}
 endsnippet
 
 

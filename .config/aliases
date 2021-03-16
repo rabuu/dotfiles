@@ -8,8 +8,8 @@ alias cupd='paru -Syyu --devel; paru -c; paru -Sc'
 alias lsd='lsd --classify --group-dirs first'
 alias ls='lsd'
 alias l='lsd'
-alias la='lsd --all'
-alias ll='lsd -all --long'
+alias la='lsd --almost-all'
+alias ll='lsd --almost-all --long'
 alias lt='lsd --tree'
 
 # change directory
@@ -17,11 +17,6 @@ alias cd..='cd ..'
 alias cd...='cd ../..'
 alias cd....='cd ../../..'
 alias cd.....='cd ../../../..'
-
-# typos
-alias dc='cd'
-alias pdw='pwd'
-alias sl='ls'
 
 # colorize grep
 alias grep='grep --color=auto'

@@ -7,9 +7,6 @@ set signcolumn=yes
 " disable showing current mode
 set noshowmode
 
-" highlight current cursor line
-set cursorline
-
 " disable introductory message
 set shortmess=I
 
@@ -17,7 +14,7 @@ set shortmess=I
 set pumheight=10
 
 " theme
-let g:gruvbox_italic=1
 set termguicolors
 set background=dark
+let g:gruvbox_italic=1
 colorscheme gruvbox
