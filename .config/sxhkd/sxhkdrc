@@ -93,7 +93,7 @@ super + shift + p
 	passrofi
 
 super + ctrl + p
-	pwr dmenu
+	rofi -show power-menu
 
 #
 # program hot keys
