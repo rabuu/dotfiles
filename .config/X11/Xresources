@@ -2,9 +2,10 @@
 /*  	COLORS 		*/
 /*  				*/
 
-! generic
-#define GENERIC_BACKGROUND 	#222629
-#define GENERIC_FOREGROUND 	#acb0b2
+! specific colors
+#define RED				#ff0000
+#define BLACK 			#000000
+#define WHITE 			#ffffff
 
 ! gruvbox
 #define GRUVBOX_BLACK 		#1d2021
@@ -43,59 +44,18 @@
 #define GRUVBOX_LIGHT3 		#bdae93
 #define GRUVBOX_LIGHT4 		#a89984
 
-#define GRUVBOX_BACKGROUND 	GRUVBOX_DARK1
 #define GRUVBOX_FOREGROUND 	GRUVBOX_LIGHT1
-
-#define GRUVBOX_CURSOR 		GRUVBOX_LIGHT1
-
-! one dark
-#define ONEDARK_BLACK 		#17191e
-#define ONEDARK_RED 		#be5046
-#define ONEDARK_GREEN 		#98c379
-#define ONEDARK_YELLOW 		#d19a66
-#define ONEDARK_BLUE 		#61afef
-#define ONEDARK_MAGENTA 	#c678dd
-#define ONEDARK_CYAN 		#56b6c2
-#define ONEDARK_GRAY 		#828791
-
-#define ONEDARK_LBLACK 		#5c6370
-#define ONEDARK_LRED 		#e06c75
-#define ONEDARK_LGREEN 		#bcd784
-#define ONEDARK_LYELLOW 	#e5c07b
-#define ONEDARK_LBLUE 		#86c2f4
-#define ONEDARK_LMAGENTA 	#e592e8
-#define ONEDARK_LCYAN 		#7ac4d1
-#define ONEDARK_WHITE 		#e6efff
-
-#define ONEDARK_DARK0 		#17191e
-#define ONEDARK_DARK1 		#282c34
-#define ONEDARK_DARK2 		#31353f
-#define ONEDARK_DARK3 		#393f4a
-#define ONEDARK_DARK4 		#3b3f4c
-
-#define ONEDARK_LIGHT1 		#e6efff
-#define ONEDARK_LIGHT2 		#abb2bf
-#define ONEDARK_LIGHT3 		#828791
-#define ONEDARK_LIGHT4 		#5c6370
-#define ONEDARK_LIGHT5 		#4b5263
-
-#define ONEDARK_BACKGROUND 	#282c34
-#define ONEDARK_FOREGROUND 	#abb2bf
-
-#define ONEDARK_CURSOR 		#abb2bf
-
-! specific colors
-#define RED				#ff0000
-#define BLACK 			#000000
-#define WHITE 			#ffffff
 
 
 /*  				*/
 /*  	FONTS 		*/
 /*  				*/
 
-#define FONT_MAIN JetBrainsMono NF:size=13
-#define FONT_TERM JetBrainsMono NF:size=13:antialias=true:autohint=true
+#ifdef SRVR_proteus
+	#define FONT JetBrainsMono NF:size=10:antialias=true:autohint=true
+#else
+	#define FONT JetBrainsMono NF:size=14:antialias=true:autohint=true
+#endif
 
 
 /* 						*/
@@ -120,7 +80,7 @@
 *.color14: GRUVBOX_LCYAN
 *.color15: GRUVBOX_WHITE
 
-*.background: GRUVBOX_BLACK
+*.background: BLACK
 *.foreground: GRUVBOX_FOREGROUND
 
 ! Xft
@@ -131,7 +91,7 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! dwm
-dwm.font: FONT_MAIN
+dwm.font: FONT
 dwm.normbordercolor: GRUVBOX_DARK3
 dwm.selbordercolor: GRUVBOX_FOREGROUND
 dwm.normbgcolor: GRUVBOX_BLACK
@@ -149,7 +109,7 @@ dwm.lockfullscreen: 1
 dwm.mfact: 0.55
 
 ! st
-st.font: FONT_TERM
+st.font: FONT
 st.color0: BLACK
 st.color1: GRUVBOX_RED
 st.color2: GRUVBOX_GREEN
@@ -166,9 +126,9 @@ st.color12: GRUVBOX_LBLUE
 st.color13: GRUVBOX_LMAGENTA
 st.color14: GRUVBOX_LCYAN
 st.color15: GRUVBOX_WHITE
-st.background: GRUVBOX_BLACK
+st.background: BLACK
 st.foreground: GRUVBOX_FOREGROUND
-st.cursorColor: GRUVBOX_CURSOR
+st.cursorColor: GRUVBOX_FOREGROUND
 st.minlatency: 8
 st.maxlatency: 33
 st.blinktimeout: 800
@@ -179,7 +139,7 @@ st.cwscale: 1.0
 st.chscale: 1.0
 
 ! dmenu
-dmenu.font: FONT_MAIN
+dmenu.font: FONT
 dmenu.background: GRUVBOX_BLACK
 dmenu.foreground: GRUVBOX_GRAY
 dmenu.selbackground: GRUVBOX_DARK3
