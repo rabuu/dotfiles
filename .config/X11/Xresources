@@ -52,7 +52,7 @@
 /*  				*/
 
 #ifdef SRVR_proteus
-	#define FONT JetBrainsMono NF:size=10:antialias=true:autohint=true
+	#define FONT JetBrainsMono NF:size=18:antialias=true:autohint=true
 #else
 	#define FONT JetBrainsMono NF:size=14:antialias=true:autohint=true
 #endif
