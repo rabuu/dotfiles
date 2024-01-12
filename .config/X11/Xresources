@@ -146,7 +146,7 @@ dmenu.selbackground: GRUVBOX_DARK3
 dmenu.selforeground: GRUVBOX_FOREGROUND
 
 ! slock
-slock.colorBackground: GENERIC_BACKGROUND
+slock.colorBackground: GRUVBOX_BLACK
 slock.colorInit: BLACK
 slock.colorInput: GRUVBOX_GREEN
 slock.colorFailed: GRUVBOX_RED
