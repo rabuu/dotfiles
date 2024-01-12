@@ -15,6 +15,13 @@ fg = "xresources"
 bg = "xresources"
 
 [[module]]
+name = "battery"
+cmd = "./modules/battery"
+repeat = 10
+fg = "xresources"
+bg = "xresources"
+
+[[module]]
 name = "network"
 cmd = "./modules/network"
 repeat = 2
