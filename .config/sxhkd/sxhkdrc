@@ -31,10 +31,10 @@ XF86Audio{Play,Stop,Next,Prev}
 # dwm
 #
 
-super + q
+super + ctrl + q
 	dwmc quit
 
-super + c
+super + shift + c
 	dwmc killclient
 
 super + b
@@ -105,13 +105,10 @@ super + Return
 super + shift + b
 	$BROWSER
 
-super + shift + e
-	emacs
-
 #
 # more
 #
 
 # lock screen
 super + ctrl + l
-	xss-lock $LOCKER
+	$LOCKER
