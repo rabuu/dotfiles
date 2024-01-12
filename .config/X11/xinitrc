@@ -44,7 +44,7 @@ redshift -O 4500
 unclutter &
 
 # screen lock
-xss-lock slock &
+xss-lock ${LOCKER:-slock} &
 xset s on &
 xset s 450 &
 

@@ -15,6 +15,7 @@ export PAGER='bat'
 export READER='zathura'
 export TERMINAL='alacritty'
 export DIFFPROG='nvim -d'
+export LOCKER='slock'
 
 # xdg variables
 export XDG_CACHE_HOME="$HOME/.cache"
