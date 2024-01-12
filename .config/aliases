@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# ls
+alias eza='eza --group-directories-first'
+alias ls='eza'
+alias la='ls -a'
+alias l='ls -1a'
+alias ll='ls -la'
+alias lt='eza -T --git-ignore'
+alias lta='ls -Ta'
+
+# cd
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# standard commands
+alias cp='cp --interactive --verbose'
+alias mv='mv --interactive --verbose'
+alias rm='rm --interactive=once --verbose'
+alias rmdir='rmdir --verbose'
+alias mkdir='mkdir --parents --verbose'
+alias ip='ip --color'
+
+# abbreviations
+alias zat='zathura'
+alias pm='pulsemixer'
+
+# calendar
+alias cal='cal -m'
+
+# xclip
+alias xclip='xclip -selection clipboard'
+
+# dotfiles
+alias dots='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
+# arch/paru
+alias parufzf="paru -Sl | awk '{print \$2(\$4==\"\" ? \"\" : \" *\")}' | fzf --multi --preview 'paru -Si {1}' | cut -d \" \" -f 1 | xargs -ro paru -S"
+alias refl='sudo reflector --country Germany --latest 10 --age 12 --sort rate --save /etc/pacman.d/mirrorlist --verbose'

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+for battery in '/sys/class/power_supply/BAT'?; do
+	capacity="$(cat "$battery/capacity")"
+	status="$(sed 's/Full/F/;s/Discharging//;s/Charging/+/;s/Not charging/N/;s/Unknown/?/' "$battery/status")"
+
+	case "$status" in
+		'-') [ "$capacity" -lt 10 ] && dunstify -u critical -h string:x-dunst-stack-tag:battery 'Battery' "Critical percentage." ;;
+		'+') [ "$capacity" -eq 100 ] && dunstify -h string:x-dunst-stack-tag:battery 'Battery' 'Fully charged.' ;;
+	esac
+
+	printf '%s%%%s' "$capacity" "$status"
+done
+

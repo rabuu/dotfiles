@@ -1,0 +1,6 @@
+#!/bin/sh
+
+vol="$(pamixer --get-volume)"
+speakers="$(pamixer --get-mute | sed 's/false//;s/true/ M/')"
+
+printf '%s%%%s' "$vol" "$speakers"

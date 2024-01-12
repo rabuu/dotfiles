@@ -1,0 +1,6 @@
+#!/bin/sh
+
+con=$(nmcli connection show --active \
+	| awk '{if (NR == 2 && $1 && $1 != "lo") print $1}');
+
+printf "%s" "${con:-n/a}"

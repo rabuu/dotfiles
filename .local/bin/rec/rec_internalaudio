@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ -z $1 ]
+then
+	filename=$(dmenu -l 0 -p 'Filename' <&-)
+else
+	filename="$1"
+fi
+
+audio_monitor=$(pactl list sources short | grep 'monitor' | awk '{ print $2 }' | dmenu -p 'Audio monitor')
+
+ffmpeg \
+	-f pulse -ac 2 -i "$audio_monitor" \
+	-c:a aac \
+	"$filename"

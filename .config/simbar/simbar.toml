@@ -1,0 +1,43 @@
+delimiter = " | "
+padding = true
+
+[[module]]
+name = "whoami"
+cmd = "./modules/whoami"
+fg = "xresources"
+bg = "xresources"
+
+[[module]]
+name = "kblayout"
+cmd = "./modules/kblayout"
+repeat = 1
+fg = "xresources"
+bg = "xresources"
+
+[[module]]
+name = "network"
+cmd = "./modules/network"
+repeat = 2
+fg = "xresources"
+bg = "xresources"
+
+[[module]]
+name = "volume"
+cmd = "./modules/volume"
+repeat = 1
+fg = "xresources"
+bg = "xresources"
+
+[[module]]
+name = "memory"
+cmd = "./modules/memory"
+repeat = 10
+fg = "xresources"
+bg = "xresources"
+
+[[module]]
+name = "date"
+cmd = "./modules/date"
+repeat = 1
+fg = "xresources"
+bg = "xresources"

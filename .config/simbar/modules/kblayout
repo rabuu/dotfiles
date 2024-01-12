@@ -1,0 +1,5 @@
+#!/bin/sh
+
+layout="$(setxkbmap -query | awk 'NR == 3 {print $2}')"
+
+printf "$layout"

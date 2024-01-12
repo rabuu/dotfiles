@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Rasmus Buurman
+	email = dev@rbuurman.de
+[pull]
+	rebase = false
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	cm = commit
+	df = diff
+	ps = push
+	pl = pull
+	rs = restore

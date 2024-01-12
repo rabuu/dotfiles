@@ -1,0 +1,11 @@
+[alias]
+rr = "run --release"
+br = "build --release"
+
+[cargo-new]
+vcs = "git"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1

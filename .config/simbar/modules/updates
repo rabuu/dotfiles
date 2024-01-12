@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf "xbps $(xbps-install -Mu --dry-run | wc -l)"

@@ -1,0 +1,64 @@
+# font
+set font 'FiraCode Nerd Font 12'
+
+set guioptions ''
+
+# colors
+set notification-error-bg   "#222629"
+set notification-error-fg   "#cc341d"
+set notification-warning-bg "#222629"
+set notification-warning-fg "#d67d0e"
+set notification-bg         "#222629"
+set notification-fg         "#acb0b2"
+
+set completion-bg           "#928374"
+set completion-fg           "#acb0b2"
+set completion-group-bg     "#222629"
+set completion-group-fg     "#c162a5"
+set completion-highlight-bg "#c162a5"
+set completion-highlight-fg "#acb0b2"
+
+set index-bg                "#222629"
+set index-fg                "#acb0b2"
+set index-active-bg         "#928374"
+set index-active-fg         "#c162a5"
+
+set inputbar-bg             "#1d2021"
+set inputbar-fg             "#acb0b2"
+
+set statusbar-bg            "#928374"
+set statusbar-fg            "#acb0b2"
+
+set highlight-color         "#c162a5"
+set highlight-active-color  "#e386cb"
+
+set default-bg              "#222629"
+set default-fg              "#acb0b2"
+
+set render-loading          true
+set render-loading-bg       "#222629"
+set render-loading-fg       "#acb0b2"
+
+set recolor-lightcolor      "#1d2021"
+set recolor-darkcolor       "#acb0b2"
+set recolor                 true
+set recolor-keephue         true
+set recolor-reverse-video   true
+
+# settings
+set statusbar-home-tilde    true
+set selection-clipboard     clipboard
+set window-title-basename   true
+set window-title-home-tilde true
+set page-padding            5
+set n-completion-items      20
+set show-hidden             true
+set incremental-search      true
+
+# mappings
+map H zoom out
+map L zoom in
+unmap -
+unmap +
+map i recolor
+map p print
