@@ -33,9 +33,7 @@ require("lazy").setup({
 
 	{
 		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("lualine").setup()
-		end,
+		config = true
 	},
 
 	{
@@ -112,15 +110,12 @@ require("lazy").setup({
 
 	{
 		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
+		config = true,
 	},
 
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
-			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -130,6 +125,22 @@ require("lazy").setup({
 		},
 		config = function()
 			require("completion")
+		end,
+	},
+
+	{
+		"williamboman/mason.nvim",
+		config = true,
+    },
+
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+		},
+		config = function()
+			require("lsp")
 		end,
 	},
 

@@ -1,5 +1,3 @@
--- CMP
-
 local cmp = require("cmp")
 
 cmp.setup({
@@ -84,40 +82,4 @@ cmp.setup.cmdline(':', {
 	}, {
 		{ name = 'cmdline' }
 	})
-})
-
--- LSP
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-local lspconfig = require("lspconfig")
-
-local default_config_servers = { "bashls", "clangd", "gopls", "pyright", "texlab", "tsserver" }
-for _, lsp in ipairs(default_config_servers) do
-	lspconfig[lsp].setup({ capabilities = capabilities })
-end
-
-lspconfig.cssls.setup({
-	cmd = { "vscode-css-languageserver", "--stdio" },
-	capabilities = capabilities,
-})
-
-lspconfig.html.setup({
-	cmd = { "vscode-html-languageserver", "--stdio" },
-	capabilities = capabilities,
-})
-
-lspconfig.jsonls.setup({
-	cmd = { "vscode-json-languageserver", "--stdio" },
-	capabilities = capabilities,
-})
-
-lspconfig.lua_ls.setup({
-	settings = {
-		Lua = {
-			diagnostics = { globals = { "vim" } }
-		}
-	},
-	capabilities = capabilities,
 })
