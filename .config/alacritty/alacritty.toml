@@ -10,7 +10,7 @@ dynamic_padding = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-size = 10
+size = 8.5
 
 [cursor]
 style = { shape = "Beam", blinking = "Off" }
