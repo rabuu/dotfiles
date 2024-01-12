@@ -17,6 +17,7 @@ xdg-utils
 xdotool
 xorg
 xorg-xinit
+xorg-xrdb
 xss-lock
 zathura
 zsh
