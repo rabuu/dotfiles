@@ -4,10 +4,10 @@
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
 export PATH="$PATH:${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin"
 export PATH="$PATH:${XDG_CONFIG_HOME:-$HOME/.config}/emacs/bin"
-. "/home/rb/.local/share/cargo/env"
+. "/home/rabuu/.local/share/cargo/env"
 
 # default programs
-# xdg-settings set default-web-browser librewolf.desktop
+xdg-settings set default-web-browser librewolf.desktop
 export BROWSER='librewolf'
 export EDITOR='nvim'
 export MANPAGER='nvim +Man!'
