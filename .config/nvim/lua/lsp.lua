@@ -1,5 +1,5 @@
 local servers = {
-	"typos_lsp", "bashls", "clangd", "cssls", "html", "jsonls", "tsserver",
+	"bashls", "clangd", "cssls", "html", "jsonls", "tsserver",
 	"texlab", "lua_ls", "pyright", "rust_analyzer", "taplo", "zls"
 }
 
@@ -13,7 +13,7 @@ local cap = vim.lsp.protocol.make_client_capabilities()
 cap.textDocument.completion.completionItem.snippetSupport = true
 
 local default_config_servers = {
-	"typos_lsp", "bashls", "clangd", "cssls", "html", "jsonls", "tsserver",
+	"bashls", "clangd", "cssls", "html", "jsonls", "tsserver",
 	"texlab", "pyright", "taplo", "zls"
 }
 
