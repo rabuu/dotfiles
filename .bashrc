@@ -13,4 +13,4 @@ eval "$(starship init bash)"
 
 #define PS2
 PS2='> '
-. "/home/rb/.local/share/cargo/env"
+. "/home/rabuu/.local/share/cargo/env"
