@@ -24,6 +24,8 @@
         doom-themes-enable-italic t
 	doom-gruvbox-dark-variant "hard")
   (load-theme 'doom-gruvbox t)
+  (custom-set-faces
+   '(default ((t (:background "#000000")))))
 
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))

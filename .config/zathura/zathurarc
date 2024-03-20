@@ -3,48 +3,6 @@ set font 'JetBrainsMono Nerd Font 12'
 
 set guioptions ''
 
-# colors
-set notification-error-bg   "#222629"
-set notification-error-fg   "#cc341d"
-set notification-warning-bg "#222629"
-set notification-warning-fg "#d67d0e"
-set notification-bg         "#222629"
-set notification-fg         "#ebdbb2"
-
-set completion-bg           "#928374"
-set completion-fg           "#ebdbb2"
-set completion-group-bg     "#222629"
-set completion-group-fg     "#c162a5"
-set completion-highlight-bg "#c162a5"
-set completion-highlight-fg "#ebdbb2"
-
-set index-bg                "#222629"
-set index-fg                "#ebdbb2"
-set index-active-bg         "#928374"
-set index-active-fg         "#c162a5"
-
-set inputbar-bg             "#000000"
-set inputbar-fg             "#ebdbb2"
-
-set statusbar-bg            "#928374"
-set statusbar-fg            "#ebdbb2"
-
-set highlight-color         "#c162a5"
-set highlight-active-color  "#e386cb"
-
-set default-bg              "#222629"
-set default-fg              "#ebdbb2"
-
-set render-loading          true
-set render-loading-bg       "#222629"
-set render-loading-fg       "#ebdbb2"
-
-set recolor-lightcolor      "#000000"
-set recolor-darkcolor       "#ebdbb2"
-set recolor                 true
-set recolor-keephue         true
-set recolor-reverse-video   true
-
 # settings
 set statusbar-home-tilde    true
 set selection-clipboard     clipboard
@@ -62,3 +20,41 @@ unmap -
 unmap +
 map i recolor
 map p print
+
+# start flavours
+# Base16 Gruvbox dark, hard
+# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+
+set default-bg                  "#000000"
+set default-fg                  "#3c3836"
+
+set statusbar-fg                "#bdae93"
+set statusbar-bg                "#504945"
+
+set inputbar-bg                 "#000000"
+set inputbar-fg                 "#fbf1c7"
+
+set notification-bg             "#000000"
+set notification-fg             "#fbf1c7"
+
+set notification-error-bg       "#000000"
+set notification-error-fg       "#fb4934"
+
+set notification-warning-bg     "#000000"
+set notification-warning-fg     "#fb4934"
+
+set highlight-color             "#fabd2f"
+set highlight-active-color      "#83a598"
+
+set completion-bg               "#3c3836"
+set completion-fg               "#83a598"
+
+set completion-highlight-fg     "#fbf1c7"
+set completion-highlight-bg     "#83a598"
+
+set recolor-lightcolor          "#000000"
+set recolor-darkcolor           "#ebdbb2"
+
+set recolor                     "false"
+set recolor-keephue             "false"
+# end flavours

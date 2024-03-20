@@ -5,4 +5,4 @@ configuration {
 	modi: "drun,run,power-menu:rofi-power-menu";
 	terminal: "alacritty";
 }
-@theme "gruvbox-dark"
+@theme "gruvbox-dark-hard"
