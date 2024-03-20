@@ -17,6 +17,8 @@
 (setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
 
+(use-package general)
+
 (use-package doom-themes
   :ensure t
   :config
@@ -47,13 +49,18 @@
 (scroll-bar-mode -1)
 
 (global-display-line-numbers-mode 1)
+(electric-pair-mode t)
+
+(use-package diminish)
 
 (use-package gcmh
+  :diminish
   :config
   (setq gcmh-high-cons-threshold (* 128 1024 1024))
   (add-hook 'after-init-hook (lambda () (gcmh-mode))))
 
 (use-package which-key
+  :diminish
   :init (which-key-mode))
 
 (use-package savehist
