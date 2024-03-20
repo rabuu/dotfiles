@@ -100,15 +100,11 @@ super + ctrl + p
 #
 
 super + Return
-	$TERMINAL
+	alacritty
 
 super + shift + b
-	$BROWSER
-
-#
-# more
-#
+	librewolf
 
 # lock screen
 super + ctrl + l
-	$LOCKER
+	slock

@@ -8,7 +8,7 @@ export PATH="$PATH:${XDG_CONFIG_HOME:-$HOME/.config}/emacs/bin"
 
 # default programs
 xdg-settings set default-web-browser librewolf.desktop
-export BROWSER='librewolf'
+# export BROWSER='librewolf'
 export EDITOR='nvim'
 export MANPAGER='nvim +Man!'
 export PAGER='bat'
@@ -63,7 +63,7 @@ export GOOGLE_DEFAULT_CLIENT_SECRET="no"
 # other variables
 export AWT_TOOLKIT='MToolkit wmname LG3D'
 export QT_QPA_PLATFORMTHEME='qt5ct'
-export COLORTERM='truecolor'
+# export COLORTERM='truecolor'
 
 # keyrings directory
 [ -d "${XDG_DATA_HOME:-$HOME/.local/share}/keyrings" ] || mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/keyrings"
