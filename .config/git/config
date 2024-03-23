@@ -1,10 +1,38 @@
-[init]
-	defaultBranch = main
 [user]
 	name = Rasmus Buurman
 	email = dev@rbuurman.de
+[advice]
+	detachedHead = false
+	pushNonFastForward = false
+	statusHints = false
+[branch]
+	autoSetupMerge = true
+[color]
+	ui = auto
+[core]
+	autocrlf = false
+[credential]
+	helper =
+	helper = cache --timeout 86400
+[diff]
+	mnemonicprefix = true
+	renames = copies
+	submodule = log
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = diff3
+	stat = true
 [pull]
+	ff = only
 	rebase = false
+[push]
+	autoSetupRemote = true
+	default = current
+[rebase]
+	autosquash = true
+[status]
+	submodulesummary = true
 [alias]
 	co = checkout
 	st = status
@@ -14,3 +42,4 @@
 	ps = push
 	pl = pull
 	rs = restore
+	sw = switch -
