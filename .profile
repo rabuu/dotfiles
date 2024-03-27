@@ -55,6 +55,9 @@ export DESKTOP_APP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY=1
 # java
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# rust/cargo
+export CARGO_TARGET_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/target"
+
 # google
 export GOOGLE_API_KEY="no"
 export GOOGLE_DEFAULT_CLIENT_ID="no"
