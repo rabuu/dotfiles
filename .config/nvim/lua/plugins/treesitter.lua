@@ -4,6 +4,7 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			"hiphish/rainbow-delimiters.nvim",
+			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 		opts = {
 			ensure_installed = {

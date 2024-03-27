@@ -8,8 +8,11 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function()
-			require("trouble").setup()
+		opts = {
+			use_diagnostic_digns = true,
+		},
+		config = function(_, opts)
+			require("trouble").setup(opts)
 			vim.keymap.set("n", "<leader>dt", function()
 				require("trouble").toggle()
 			end, { desc = "Trouble" })
