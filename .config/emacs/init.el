@@ -105,11 +105,6 @@
   (eglot-send-changes-idle-time 3)
   (flymake-no-changes-timeout 5))
 
-(use-package eglot-booster
-  :straight (:type git :host github :repo "jdtsmith/eglot-booster")
-  :after eglot
-  :config (eglot-booster-mode))
-
 (use-package corfu
   :straight
   (corfu :files (:defaults "extensions/*") :includes corfu-popupinfo)
