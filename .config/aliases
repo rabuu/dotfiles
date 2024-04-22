@@ -32,6 +32,9 @@ alias ip='ip --color'
 alias zat='zathura'
 alias pm='pulsemixer'
 
+# abandon running processes
+alias abandon='disown && exit'
+
 # calendar
 alias cal='cal -m'
 
