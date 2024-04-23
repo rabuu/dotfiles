@@ -4,6 +4,7 @@ set font 'JetBrainsMono Nerd Font 12'
 set guioptions ''
 
 # settings
+set sandbox                 none
 set statusbar-home-tilde    true
 set selection-clipboard     clipboard
 set window-title-basename   true
@@ -12,6 +13,7 @@ set page-padding            5
 set n-completion-items      20
 set show-hidden             true
 set incremental-search      true
+set first-page-column       1:1
 
 # mappings
 map H zoom out
@@ -58,3 +60,6 @@ set recolor-darkcolor           "#ebdbb2"
 set recolor                     "false"
 set recolor-keephue             "false"
 # end flavours
+
+set highlight-color "rgba(250, 189, 47, 0.5)"
+set highlight-active-color "rgba(131, 165, 152, 0.5)"
