@@ -1,84 +1,42 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
-### settings
+# Set up zinit
+ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
+if [ ! -d "$ZINIT_HOME" ]; then
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "$ZINIT_HOME/zinit.zsh"
 
-# history settings
-setopt hist_expire_dups_first hist_reduce_blanks
+# basic plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
 
-# enable comments
-setopt interactive_comments
+# more snippets
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::command-not-found
 
-# colors
-autoload -Uz colors && colors
+# completions
+autoload -U compinit && compinit
+setopt no_beep extended_glob glob_dots aliases correct complete_in_word
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# disable rm * warning
-setopt rm_star_silent
+zinit cdreplay -q
 
-### prompt
-
-# starship prompt
+# prompt: starship
 eval "$(starship init zsh)"
 
-# define PS2
-PS2='> '
-
-### vim mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# enable incremental history backwards search
-bindkey '^R' history-incremental-search-backward
-
-# cursor shapes for vim modes
-cursor_block='\e[1 q'
-cursor_beam='\e[5 q'
-function zle-keymap-select {
-	case "$KEYMAP" in
-		vicmd) echo -ne "$cursor_block" ;;
-		viins|main) echo -ne "$cursor_beam" ;;
-	esac
-}
-zle -N zle-keymap-select
-
-function precmd {
-	# set terminal title to current working directory
-	print -Pn '\e]0;%~\a'
-}
-
-function preexec {
-	# set terminal title to current command
-	print -Pn "\e]0;$1\a"
-
-	# reset cursor shape
-	echo -ne "$cursor_beam"
-}
-
-zle-line-init() {
-	# reset cursor shape
-	echo -ne "$cursor_beam"
-}
-zle -N zle-line-init
-
-
-### completion
-
-setopt no_beep extended_glob glob_dots aliases correct complete_in_word
-
-# initialize
-autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME:-"$HOME/.cache"}/zcompdump"
-zmodload zsh/complist
-
-# case insensitive matching
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# vim keys in completion menu
-zstyle ':completion:*' menu select
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'j' vi-down-line-or-history
-
 ### mappings
+
+# keybindings: emacs
+bindkey -e
+
+# search keys
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^r' history-incremental-search-backward
 
 # bind del key
 bindkey '^[[3~' delete-char
@@ -96,13 +54,47 @@ bindkey '^e' edit-command-line
 # `cd && clear` with <c-space>
 bindkey -s '^ ' '^ucd && clear\n'
 
-# source aliases
-[[ -f ${XDG_CONFIG_HOME:-"$HOME/.config"}/aliases ]] && source "${XDG_CONFIG_HOME:-"$HOME/.config"}/aliases"
+# history
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zhistory"
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt hist_reduce_blanks
 
-### plugins
+# settings
+setopt interactive_comments
+setopt rm_star_silent
 
-# syntax highlighting
-source '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+# cursor shape and terminal title
+cursor_beam='\e[5 q'
+function precmd {
+	print -Pn "\e]0;%~\a"
+}
+function preexec {
+	print -Pn "\e]0;$1\a"
+	echo -ne "$cursor_beam"
+}
+function zle-line-init {
+	echo -ne "$cursor_beam"
+}
+zle -N zle-line-init
+
+# aliases
+source "${XDG_CONFIG_HOME:-$HOME/.config}/aliases"
+
+# fzf
+zinit light Aloxaf/fzf-tab
+zstyle ":completion:*" menu no
+zstyle ":fzf-tab:complete:cd:*" fzf-preview 'ls --color $realpath'
+zstyle ":fzf-tab:complete:__zoxide_z" fzf-preview 'ls --color $realpath'
+eval "$(fzf --zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"

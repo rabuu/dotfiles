@@ -22,11 +22,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# shell variables
-export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zhistory"
-export HISTSIZE=5000
-export SAVEHIST=5000
-
 # variables for home directory clean up
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
