@@ -26,8 +26,10 @@ return {
 	},
 
 	{
-		"JosefLitos/colorizer.nvim",
-		config = true,
+		"brenoprata10/nvim-highlight-colors",
+		opts = {
+			render = "virtual",
+		},
 	},
 
 	{
