@@ -14,7 +14,7 @@ return {
 		config = function(_, opts)
 			require("trouble").setup(opts)
 			vim.keymap.set("n", "<leader>dt", function()
-				require("trouble").toggle()
+				require("trouble").toggle("diagnostics")
 			end, { desc = "Trouble" })
 		end,
 	},
@@ -52,4 +52,6 @@ return {
 			vim.keymap.set("n", "<leader>xo", "<cmd>Oil<cr>", { desc = "Open oil file browser" })
 		end,
 	},
+
+	"mfussenegger/nvim-jdtls",
 }
