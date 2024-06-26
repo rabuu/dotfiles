@@ -18,7 +18,7 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # completions
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 setopt no_beep extended_glob glob_dots aliases correct complete_in_word
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"

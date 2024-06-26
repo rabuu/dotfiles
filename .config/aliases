@@ -35,6 +35,10 @@ alias pm='pulsemixer'
 # abandon running processes
 alias abandon='disown && exit'
 
+# home cleanup
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+alias adb="HOME=$XDG_DATA_HOME/android adb"
+
 # calendar
 alias cal='cal -m'
 

@@ -1,9 +1,15 @@
 #!/bin/sh
 
+# xdg variables
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 # add scripts to the path
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
-export PATH="$PATH:${XDG_DATA_HOME:-$HOME/.local/share}/cargo/bin"
-export PATH="$PATH:${XDG_CONFIG_HOME:-$HOME/.config}/emacs/bin"
+export PATH="$PATH:$XDG_DATA_HOME/cargo/bin"
+export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 . "/home/rabuu/.local/share/cargo/env"
 
 # default programs
@@ -17,31 +23,29 @@ export TERMINAL='alacritty'
 export DIFFPROG='nvim -d'
 export LOCKER='slock'
 
-# xdg variables
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-
 # variables for home directory clean up
-export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
-export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
-export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
-export JULIA_DEPOT_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/julia:$JULIA_DEPOT_PATH"
-export STARSHIP_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/starship/starship.toml"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export GOPATH="$XDG_DATA_HOME/go"
+export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export LESSHISTFILE=-
-export XAUTHORITY="${XDG_DATA_HOME:-$HOME/.local/share}/X11/Xauthority"
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-export GTK2_RC_FILES="${XDG_CONFIG_HOME:-"$HOME/.config"}/gtk-2.0/gtkrc-2.0"
-export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle"
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
-export TEXMFHOME="${XDG_DATA_HOME:-$HOME/.local/share}/texmf"
-export TEXMFVAR="${XDG_CACHE_HOME:-$HOME/.cache}/texlive/texmf-var"
-export TEXMFCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/texlive/texmf-config"
-export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export XAUTHORITY="$XDG_DATA_HOME/X11/Xauthority"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
+export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export GHCUP_USE_XDG_DIRS=1
-export CABAL_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/cabal"
-export CABAL_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/cabal"
-export STACK_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/stack"
+export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
+export CABAL_DIR="$XDG_CACHE_HOME/cabal"
+export STACK_ROOT="$XDG_DATA_HOME/stack"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 
 # telegram
 export TDESKTOP_USE_GTK_FILE_DIALOG=1
@@ -51,7 +55,7 @@ export DESKTOP_APP_I_KNOW_ABOUT_GTK_INCOMPATIBILITY=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # rust/cargo
-export CARGO_TARGET_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/cargo/target"
+export CARGO_TARGET_DIR="$XDG_DATA_HOME/cargo/target"
 
 # google
 export GOOGLE_API_KEY="no"
@@ -64,4 +68,4 @@ export QT_QPA_PLATFORMTHEME='qt5ct'
 # export COLORTERM='truecolor'
 
 # keyrings directory
-[ -d "${XDG_DATA_HOME:-$HOME/.local/share}/keyrings" ] || mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/keyrings"
+[ -d "$XDG_DATA_HOME/keyrings" ] || mkdir -p "$XDG_DATA_HOME/keyrings"
