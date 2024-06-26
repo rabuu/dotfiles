@@ -26,13 +26,6 @@ return {
 	},
 
 	{
-		"brenoprata10/nvim-highlight-colors",
-		opts = {
-			render = "virtual",
-		},
-	},
-
-	{
 		"nvim-focus/focus.nvim",
 		opts = {
 			commands = false,
