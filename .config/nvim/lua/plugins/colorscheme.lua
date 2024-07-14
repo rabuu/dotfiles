@@ -1,16 +1,22 @@
 return {
 	{
-		"ellisonleao/gruvbox.nvim",
+		-- "ellisonleao/gruvbox.nvim",
+		-- opts = {
+		-- 	contrast = "hard",
+		-- 	overrides = {
+		-- 		Normal = { bg = "none" },
+		-- 		SignColumn = { bg = "none" },
+		-- 	},
+		-- },
+
+		"catppuccin/nvim",
+		name = "catppuccin",
+
 		lazy = true,
 		priority = 1000,
-		opts = {
-			contrast = "hard",
-			overrides = {
-				Normal = { bg = "none" },
-			},
-		},
 		init = function()
-			vim.cmd.colorscheme("gruvbox")
+			vim.g.background = "light"
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 }

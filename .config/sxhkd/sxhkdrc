@@ -61,7 +61,7 @@ super + {j,k}
 super + shift + {j,k}
 	dwmc movestack {+,-}1
 
-super + shift + Return
+super + Return
 	dwmc zoom
 
 super + {period,comma}
@@ -99,7 +99,7 @@ super + ctrl + p
 # program hot keys
 #
 
-super + Return
+super + shift + Return
 	alacritty
 
 super + shift + b

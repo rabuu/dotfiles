@@ -19,19 +19,6 @@
 
 (use-package general)
 
-(use-package doom-themes
-  :ensure t
-  :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t
-	doom-gruvbox-dark-variant "hard")
-  (load-theme 'doom-gruvbox t)
-  (custom-set-faces
-   '(default ((t (:background "#000000")))))
-
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
-
 (setq user-full-name "Rasmus Buurman"
       user-mail-address "dev@rbuurman.de")
 
@@ -47,6 +34,12 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+(use-package catppuccin-theme
+  :config
+  (setq catppuccin-flavor 'latte)
+  (catppuccin-reload)
+  :init (load-theme 'catppuccin :no-confirm))
 
 (global-display-line-numbers-mode 1)
 (electric-pair-mode t)
