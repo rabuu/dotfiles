@@ -12,5 +12,13 @@ return {
 
 			vim.keymap.set("n", "<leader>vc", "<cmd>VimtexCompile<cr>")
 		end,
+		keys = {
+			{
+				"<leader>vc",
+				"<cmd>VimtexCompile<cr>",
+				ft = "tex",
+				desc = "Compile LaTeX file",
+			},
+		},
 	},
 }

@@ -1,18 +1,17 @@
 return {
 	{
 		"folke/which-key.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
+		opts = {},
 		config = function()
-			require("which-key").setup()
-
-			require("which-key").register({
-				["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "Diagnostics", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "Window", _ = "which_key_ignore" },
-				["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
-				["<leader>x"] = { name = "Basics", _ = "which_key_ignore" },
-				["<leader>h"] = { name = "Harpoon", _ = "which_key_ignore" },
-				["<c-h>"] = { name = "Help", _ = "which_key_ignore" },
+			require("which-key").add({
+				{ "<leader>c", group = "code" },
+				{ "<leader>d", group = "diagnostics" },
+				{ "<leader>w", group = "window" },
+				{ "<leader>b", group = "buffer" },
+				{ "<leader>x", group = "basics" },
+				{ "<leader>h", group = "harpoon" },
+				{ "<c-h>", group = "help" },
 			})
 		end,
 	},
