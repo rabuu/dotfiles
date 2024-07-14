@@ -63,3 +63,5 @@ set recolor-keephue             "false"
 
 set highlight-color "rgba(250, 189, 47, 0.5)"
 set highlight-active-color "rgba(131, 165, 152, 0.5)"
+
+set database sqlite

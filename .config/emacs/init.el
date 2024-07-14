@@ -17,23 +17,6 @@
 (setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
 
-(use-package general)
-
-(use-package doom-themes
-  :ensure t
-  :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t
-	doom-gruvbox-dark-variant "hard")
-  (load-theme 'doom-gruvbox t)
-  (custom-set-faces
-   '(default ((t (:background "#000000")))))
-
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
-
-(set-frame-font "JetBrainsMono Nerd Font 12" nil t)
-
 (setq user-full-name "Rasmus Buurman"
       user-mail-address "dev@rbuurman.de")
 
@@ -50,8 +33,18 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+(set-frame-font "JetBrainsMono Nerd Font 12" nil t)
+
+(use-package catppuccin-theme
+  :config
+  (setq catppuccin-flavor 'latte)
+  (catppuccin-reload)
+  :init (load-theme 'catppuccin :no-confirm))
+
 (global-display-line-numbers-mode 1)
 (electric-pair-mode t)
+
+(use-package general)
 
 (use-package diminish)
 
