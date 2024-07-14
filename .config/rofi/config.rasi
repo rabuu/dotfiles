@@ -1,8 +1,8 @@
 configuration {
 	show-icons: true;
-	icon-theme: "PapirusDark";
+	icon-theme: "Adwaita-dark";
 	kb-cancel: "Escape,Control+q";
-	modi: "drun,run,power-menu:rofi-power-menu";
+	modi: "drun,run,powermenu:rofi-power-menu";
 	terminal: "alacritty";
 }
 @theme "gruvbox-dark-hard"

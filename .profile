@@ -13,15 +13,13 @@ export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 . "/home/rabuu/.local/share/cargo/env"
 
 # default programs
-xdg-settings set default-web-browser librewolf.desktop
-# export BROWSER='librewolf'
+xdg-settings set default-web-browser firefox.desktop
 export EDITOR='nvim'
 export MANPAGER='nvim +Man!'
 export PAGER='bat'
 export READER='zathura'
 export TERMINAL='alacritty'
 export DIFFPROG='nvim -d'
-export LOCKER='slock'
 
 # variables for home directory clean up
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
@@ -30,7 +28,6 @@ export GOPATH="$XDG_DATA_HOME/go"
 export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export LESSHISTFILE=-
-export XAUTHORITY="$XDG_DATA_HOME/X11/Xauthority"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
@@ -56,16 +53,3 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # rust/cargo
 export CARGO_TARGET_DIR="$XDG_DATA_HOME/cargo/target"
-
-# google
-export GOOGLE_API_KEY="no"
-export GOOGLE_DEFAULT_CLIENT_ID="no"
-export GOOGLE_DEFAULT_CLIENT_SECRET="no"
-
-# other variables
-export AWT_TOOLKIT='MToolkit wmname LG3D'
-export QT_QPA_PLATFORMTHEME='qt5ct'
-# export COLORTERM='truecolor'
-
-# keyrings directory
-[ -d "$XDG_DATA_HOME/keyrings" ] || mkdir -p "$XDG_DATA_HOME/keyrings"

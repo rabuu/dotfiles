@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # source aliases
-[[ -f ${XDG_CONFIG_HOME:-"$HOME/.config"}/aliases ]] && source "${XDG_CONFIG_HOME:-"$HOME/.config"}/aliases"
+[[ -f "$XDG_CONFIG_HOME/aliases" ]] && source "$XDG_CONFIG_HOME/aliases"
 
 # starship prompt
 eval "$(starship init bash)"

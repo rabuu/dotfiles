@@ -14,8 +14,6 @@ zinit light zsh-users/zsh-completions
 
 # more snippets
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
 
 # completions
 autoload -U compinit && compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"

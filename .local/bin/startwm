@@ -1,5 +1,0 @@
-session=${1:-dwm}
-
-xinitrc="$XDG_CONFIG_HOME/X11/xinitrc"
-
-startx $xinitrc $session

@@ -32,6 +32,8 @@
   (doom-themes-visual-bell-config)
   (doom-themes-org-config))
 
+(set-frame-font "JetBrainsMono Nerd Font 12" nil t)
+
 (setq user-full-name "Rasmus Buurman"
       user-mail-address "dev@rbuurman.de")
 
@@ -133,3 +135,5 @@
   :config (global-tree-sitter-mode))
 (use-package tree-sitter-langs
   :after tree-sitter)
+
+(use-package haskell-mode)
