@@ -44,8 +44,9 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 
-# bat
-export BAT_THEME="GitHub"
+# light themed CLI tools
+export BAT_THEME='GitHub'
+export FZF_DEFAULT_OPTS='--color light'
 
 # telegram
 export TDESKTOP_USE_GTK_FILE_DIALOG=1
