@@ -5,8 +5,8 @@ import XMonad.Util.EZConfig (additionalKeysP)
 main = xmonad $ xfceConfig
     { terminal    = "alacritty"
     , modMask     = mod4Mask
-    , normalBorderColor = "#282828"
-    , focusedBorderColor = "#ebdbb2"
+    , normalBorderColor = "#bbbbbb"
+    , focusedBorderColor = "#cc33dd"
     }
     `additionalKeysP`
     [ ("M-S-b", spawn "firefox")
