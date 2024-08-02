@@ -1,0 +1,275 @@
+#+title: My Emacs Configuration
+#+author: Rasmus Buurman (@rabuu)
+#+property: header-args :tangle yes
+
+* Package Manager: straight.el
+I use [[https://github.com/radian-software/straight.el][straight.el]] as package manager.
+In [[./early-init.el][early-init.el]] we already deactivated ~package.el~.
+
+First, we want to bootstrap/install the package manager.
+#+begin_src emacs-lisp
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+	 (expand-file-name
+	  "straight/repos/straight.el/bootstrap.el"
+	  (or (bound-and-true-p straight-base-dir)
+	      user-emacs-directory)))
+	(bootstrap-version 7))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+	  (url-retrieve-synchronously
+	   "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+#+end_src
+
+Then we want to use the ~use-package~ macro that supports ~straight.el~ integration.
+#+begin_src emacs-lisp
+  (setq straight-use-package-by-default t)
+  (straight-use-package 'use-package)
+#+end_src
+
+* General configuration
+
+** Default settings
+#+begin_src emacs-lisp
+  (setq-default
+   initial-scratch-message ";; GNU Emacs\n;; This is the *scratch* buffer, do whatever you feel like."
+   user-full-name "Rasmus Buurman"
+   user-mail-address "dev@rbuurman.de"
+   inhibit-startup-screen t
+   auto-save-default t
+   scroll-margin 2
+   enable-recursive-minibuffers t)
+
+  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
+
+  (setq gc-cons-threshold 100000000
+  	read-process-output-max (* 1024 1024))
+#+end_src
+
+** Default modes
+
+*** savehist
+Save minibuffer history.
+#+begin_src emacs-lisp
+  (setq savehist-file (expand-file-name "savehist" user-emacs-directory))
+  (savehist-mode)
+#+end_src
+
+*** electric-pair-mode
+Smartly insert pairs like parens or quotes.
+#+begin_src emacs-lisp
+  (electric-pair-mode t)
+#+end_src
+
+** Default UI
+
+*** Disable default UI elements
+I don't like some of the default Emacs UI elements. Let's disable them.
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
+#+end_src
+
+*** Font
+Make sure the specified fonts are installed on your system.
+#+begin_src emacs-lisp
+  (defun my/configure-fonts ()
+    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font 12")
+    (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font 12")
+    (set-face-attribute 'variable-pitch nil :font "Cantarell 14"))
+
+  (if (daemonp)
+      (add-hook 'server-after-make-frame-hook #'my/configure-fonts)
+    (my/configure-fonts))
+#+end_src
+
+*** Theme
+For now, I use the Emacs builtin ~modus-operandi~ theme.
+#+begin_src emacs-lisp
+  (load-theme 'modus-operandi t)
+#+end_src
+
+*** Line numbers
+This enables line numbers in every buffer.
+#+begin_src emacs-lisp
+  (global-display-line-numbers-mode 1)
+#+end_src
+
+*** Highlight current line
+#+begin_src emacs-lisp
+  (use-package hl-line
+    :hook
+    (prog-mode . hl-line-mode)
+    (text-mode . hl-line-mode))
+#+end_src
+
+** Extern customization file
+We don't want to clutter our configuration, so we define a ~custom.el~ file for customization.
+#+begin_src emacs-lisp
+  (let ((customization-file
+       (expand-file-name "custom.el" user-emacs-directory)))
+  (unless (file-exists-p customization-file)
+    (write-region "" nil customization-file))
+  (setq custom-file customization-file)
+  (load custom-file 'noerror))
+#+end_src
+
+** Utility functions
+
+*** Reload Emacs configuration
+#+begin_src emacs-lisp
+  (defun my/reload-emacs ()
+    "Reload the Emacs configuration"
+    (interactive)
+    (load-file (expand-file-name "init.el" user-emacs-directory)))
+#+end_src
+
+* Default packages
+Here we install some packages that don't need to be mentioned in their own section.
+
+** emacs-compat
+This is compatibility layer library some packages use.
+#+begin_src emacs-lisp
+  (use-package compat
+    :straight (:host github :repo "emacs-compat/compat"))
+#+end_src
+
+** diminish
+This lets us hide certain minor modes from the modeline.
+#+begin_src emacs-lisp
+  (use-package diminish)
+#+end_src
+
+** transient
+This is a library used to implement keyboard-driven "menus", specifically in ~magit~.
+#+begin_src emacs-lisp
+  (use-package transient)
+#+end_src
+
+** All the Icons
+This is a utility package for all things that have to do with icons.
+Quite a few other packages make use of this.
+#+begin_src emacs-lisp
+  (use-package all-the-icons)
+#+end_src
+
+It is very important to install the resource fonts included in this packages.
+Use ~M-x all-the-icons-install-fonts~.
+
+** undo-tree
+Emacs' default undo system is a bit weird. ~undo-tree~ provides a more vim-like undo behavior.
+#+begin_src emacs-lisp
+  (use-package undo-tree
+    :diminish
+    :init (global-undo-tree-mode)
+    :config
+    (setq undo-tree-auto-save-history t
+     undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo-tree")))))
+#+end_src
+
+* Minibuffer UI
+My minibuffer configuration uses ~Vertico~, ~Marginalia~ and ~orderless~
+which together provide a nice way of interacting with all kinds of minibuffers.
+
+** Vertico
+This is a minibuffer interface. It changes how minibuffers in general look and how you interact.
+#+begin_src emacs-lisp
+  (use-package vertico
+    :custom
+    (vertico-resize nil)
+    (vertico-cycle t)
+    :init (vertico-mode))
+#+end_src
+
+** Marginalia
+This provides nice minibuffer annotations.
+#+begin_src emacs-lisp
+  (use-package marginalia
+    :init (marginalia-mode))
+#+end_src
+
+** Orderless
+This provides an alternative completion style for candidate-filtering.
+#+begin_src emacs-lisp
+  (use-package orderless
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-defaults nil)
+    (completion-category-overrides
+     '((file (styles partial-completion basic-remote orderless)))))
+#+end_src
+
+* Org mode
+#+begin_src emacs-lisp
+  (defun my/configure-org-fonts ()
+    (dolist (face '((org-level-1 . 1.2)
+  		  (org-level-2 . 1.1)
+  		  (org-level-3 . 1.05)
+  		  (org-level-4 . 1.0)
+  		  (org-level-5 . 1.1)
+  		  (org-level-6 . 1.1)
+  		  (org-level-7 . 1.1)
+  		  (org-level-8 . 1.1)))
+      (set-face-attribute (car face) nil :height (cdr face)))
+
+    (custom-theme-set-faces
+     'user
+     '(org-block ((t (:inherit fixed-pitch))))
+     '(org-code ((t (:inherit (shadow fixed-pitch)))))
+     '(org-document-info ((t (:foreground "dark orange"))))
+     '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+     '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+     '(org-link ((t (:foreground "royal blue" :underline t))))
+     '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+     '(org-property-value ((t (:inherit fixed-pitch))) t)
+     '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+     '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+     '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
+     '(org-verbatim ((t (:inherit (shadow fixed-pitch)))))))
+
+  (use-package org
+    :diminish org-indent-mode
+    :diminish visual-line-mode
+    :hook
+    (org-mode . visual-line-mode)
+    (org-mode . variable-pitch-mode)
+    :custom
+    (org-startup-indented t)
+    (org-hide-emphasis-markers t)
+    :config
+    (my/configure-org-fonts))
+#+end_src
+
+** org-bullets
+#+begin_src emacs-lisp
+  (use-package org-bullets
+    :after org
+    :hook (org-mode . org-bullets-mode))
+#+end_src
+
+* which-key
+This is a very useful package that helps you with your key bindings.
+#+begin_src emacs-lisp
+  (use-package which-key
+    :diminish
+    :init (which-key-mode))
+#+end_src
+
+* Terminal Emulator: eat
+This is a terminal emulator for Emacs.
+#+begin_src emacs-lisp
+  (straight-use-package
+   '(eat :type git
+         :host codeberg
+         :repo "akib/emacs-eat"
+         :files ("*.el" ("term" "term/*.el") "*.texi"
+                 "*.ti" ("terminfo/e" "terminfo/e/*")
+                 ("terminfo/65" "terminfo/65/*")
+                 ("integration" "integration/*")
+                 (:exclude ".dir-locals.el" "*-tests.el"))))
+#+end_src
