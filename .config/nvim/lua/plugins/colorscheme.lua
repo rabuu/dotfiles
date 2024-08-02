@@ -9,14 +9,22 @@ return {
 		-- 	},
 		-- },
 
-		"catppuccin/nvim",
-		name = "catppuccin",
+		-- 	"catppuccin/nvim",
+		-- 	name = "catppuccin",
+		--
+		-- 	lazy = true,
+		-- 	priority = 1000,
+		-- 	init = function()
+		-- 		vim.g.background = "light"
+		-- 		vim.cmd.colorscheme("catppuccin")
+		-- 	end,
 
+		"miikanissi/modus-themes.nvim",
 		lazy = true,
 		priority = 1000,
 		init = function()
-			vim.g.background = "light"
-			vim.cmd.colorscheme("catppuccin")
+			vim.opt.background = "light"
+			vim.cmd.colorscheme("modus")
 		end,
 	},
 }

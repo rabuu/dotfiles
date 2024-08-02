@@ -1,5 +1,5 @@
 import = [
-	"~/.config/alacritty/catppuccin-latte.toml",
+	"~/.config/alacritty/modus-operandi.toml",
 ]
 
 live_config_reload = true
