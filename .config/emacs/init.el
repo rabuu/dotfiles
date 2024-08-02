@@ -2,7 +2,8 @@
 
 ;;; Commentary:
 ;; The init file of my Emacs configuration.
-;; It automatically tangles the config.org file to a config.el and includes it.
+;; The real config is in config.el (which is generated from config.org).
+;; This file just includes it.
 
 ;;; Code:
 
