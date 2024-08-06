@@ -134,6 +134,11 @@ Now let's install the ~use-package~ macro that we will use throughout the rest o
 (straight-use-package 'use-package)
 #+end_src
 
+Also we should load ~org~ very early because many things depend on it.
+#+begin_src emacs-lisp
+(straight-use-package 'org)
+#+end_src
+
 ** Garbage Collector Magic Hack
 ~gcmh~ is a package that improves the GC.
 #+begin_src emacs-lisp
@@ -172,7 +177,7 @@ Here we set our own default settings.
  default-directory "~/"
  initial-scratch-message ";; GNU Emacs\n;; This is the *scratch* buffer, do whatever you feel like.\n\n"
  user-full-name "Rasmus Buurman"
- user-mail-address "dev@rbuurman.de"
+ user-mail-address "rasmus@rbuurman.de"
  inhibit-startup-screen t
  auto-save-default t
  scroll-margin 2
@@ -544,17 +549,18 @@ Here we use ~diredfl~ to make the default ~dired~ a little prettier.
 	 ("C-c T" . vterm)))
 #+end_src
 
-** TODO Mail Client: mu4e
+** Mail Client: mu4e
 ~mu4e~ is a mail client for Emacs. Make sure is installed on your system.
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e/")
 (require 'mu4e)
 #+end_src
 
 Now we can setup ~mu4e~ to our liking.
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
 (setq mu4e-maildir "~/.mail"
-      mu4e-personal-addresses '("rasmus@rbuurman.de")
+      mu4e-personal-addresses '("rasmus@rbuurman.de"
+				"rasmus.buurman@student.uni-tuebingen.de")
       mu4e-get-mail-command "mbsync -a"
       mu4e-change-filenames-when-moving t
       mu4e-confirm-quit nil)
@@ -573,7 +579,7 @@ Now we can setup ~mu4e~ to our liking.
 		   (mu4e-refile-folder . "/personal/Archives")
 		   (mu4e-trash-folder . "/personal/Trash")))))
 
-(setq mu4e-maildir-shortcuts '((:maildir "/personal/Inbox" :key ?i)))
+(setq mu4e-maildir-shortcuts '((:maildir "/personal/INBOX" :key ?i)))
 #+end_src
 
 ** init.el footer
