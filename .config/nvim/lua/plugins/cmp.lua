@@ -26,17 +26,6 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-
-			-- rust
-			-- {
-			-- 	"Saecki/crates.nvim",
-			-- 	event = { "BufRead Cargo.toml" },
-			-- 	opts = {
-			-- 		src = {
-			-- 			cmp = { enabled = true },
-			-- 		},
-			-- 	},
-			-- },
 		},
 		config = function()
 			local cmp = require("cmp")

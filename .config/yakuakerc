@@ -1,0 +1,7 @@
+[Dialogs]
+FirstRun=false
+
+[Window]
+ShowSystrayIcon=false
+ShowTabBar=false
+ShowTitleBar=false

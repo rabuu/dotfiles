@@ -5,12 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# source aliases
-[[ -f "$XDG_CONFIG_HOME/aliases" ]] && source "$XDG_CONFIG_HOME/aliases"
+PS1='[\u@\h \W]\$ '
 
-# starship prompt
-eval "$(starship init bash)"
-
-#define PS2
-PS2='> '
-. "/home/rabuu/.local/share/cargo/env"
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+then
+	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+	exec fish $LOGIN_OPTION
+fi

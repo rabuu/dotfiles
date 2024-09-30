@@ -1,7 +1,0 @@
-#!/bin/sh
-
-echo 'Update Emacs: (straight-pull-all)'
-echo
-emacs --batch -l ~/.config/emacs/init.el --eval='(straight-pull-all)'
-echo
-echo 'Completed.'
