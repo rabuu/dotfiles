@@ -7,7 +7,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export PATH="$HOME/.local/bin:$XDG_CONFIG_DIR/emacs/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
 
 export EDITOR='nvim'
 export PAGER='bat'
