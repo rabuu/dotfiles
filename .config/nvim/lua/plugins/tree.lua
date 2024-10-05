@@ -10,7 +10,7 @@ return {
         },
     },
     keys = {
-        { "<leader>Tt", vim.cmd.NvimTreeToggle, desc = "NvimTree" },
-        { "<leader>F", vim.cmd.NvimTreeFocus, desc = "Focus NvimTree" },
+        { "<leader>Tt", vim.cmd.NvimTreeToggle, desc = "tree file browser" },
+        { "<leader>F", vim.cmd.NvimTreeFocus, desc = "focus tree file browser" },
     },
 }

@@ -12,7 +12,7 @@ return {
 			["^"] = "actions.parent",
 		},
 	},
-	keys = { { "<Leader>f", vim.cmd.Oil, desc = "Oil file manager" } },
+	keys = { { "<Leader>f", vim.cmd.Oil, desc = "oil file manager" } },
 	cmd = "Oil",
 	config = function(_, opts)
 		require("oil").setup(opts)
