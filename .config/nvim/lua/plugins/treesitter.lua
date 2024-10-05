@@ -1,10 +1,10 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
-		},
+		build = function() require("nvim-treesitter.install").update() end,
+		lazy = true,
+		event = "VeryLazy",
+		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
 		opts = {
 			ensure_installed = {
 				"c",
@@ -18,14 +18,9 @@ return {
 				"rust",
 			},
 			auto_install = true,
-			highlight = {
-				enable = true,
-			},
+			highlight = { enable = true },
 			indent = { enable = true },
 		},
-		config = function(_, opts)
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup(opts)
-		end,
+		config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
 	},
 }

@@ -1,0 +1,1 @@
+/home/rabuu/dev/scrapt/editor/vim/ftdetect/scrapt.vim

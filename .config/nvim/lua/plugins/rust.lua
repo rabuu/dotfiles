@@ -1,26 +1,26 @@
 return {
-	{
-		"mrcjkb/rustaceanvim",
-		version = "^4",
-		ft = { "rust" },
-		opts = {
-			server = {
-				on_attach = function(_, bufnr)
-					vim.keymap.set("n", "<leader>cA", function()
-						vim.cmd.RustLsp("codeAction")
-					end, { desc = "Code action (rust)", buffer = bufnr })
-
-					vim.keymap.set("n", "<leader>cD", function()
-						vim.cmd.RustLsp("debuggables")
-					end, { desc = "Debuggables (rust)", buffer = bufnr })
-				end,
-			},
+	"mrcjkb/rustaceanvim",
+	version = "^5",
+	lazy = false,
+	opts = {
+		server = {
+			on_attach = function(_, bufnr)
+				vim.keymap.set("n", "<leader>cD", function()
+					vim.cmd.RustLsp("debuggables")
+				end, { desc = "rust: debuggables", buffer = bufnr })
+			end,
 			default_settings = {
 				["rust-analyzer"] = {
+					imports = {
+						granularity = {
+							group = "module",
+						},
+						prefix = "self",
+					},
 					cargo = {
 						allFeatures = true,
 						loadOutDirsFromCheck = true,
-						runBuildScripts = true,
+						buildScripts = { enable = true },
 					},
 					checkOnSave = {
 						allFeatures = true,
@@ -38,8 +38,8 @@ return {
 				},
 			},
 		},
-		config = function(_, opts)
-			vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
-		end,
 	},
+	config = function(_, opts)
+		vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
+	end,
 }
