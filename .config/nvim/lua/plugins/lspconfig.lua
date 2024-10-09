@@ -1,11 +1,5 @@
 return {
 	"neovim/nvim-lspconfig",
-	dependencies = {
-		{ "williamboman/mason.nvim", config = true },
-		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-nvim-lsp",
-	},
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
@@ -41,23 +35,8 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		local servers = {
-			clangd = {},
-			texlab = {},
-		}
+		require("lspconfig").clangd.setup({ capabilities = capabilities })
+		require("lspconfig").texlab.setup({ capabilities = capabilities })
 
-		require("mason").setup()
-
-		local ensure_installed = vim.tbl_keys(servers or {})
-
-		require("mason-lspconfig").setup({
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
-				end,
-			},
-		})
 	end,
 }

@@ -1,1 +1,0 @@
-/home/rabuu/dev/scrapt/editor/vim/syntax/scrapt.vim

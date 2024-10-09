@@ -33,5 +33,25 @@ return {
 			function() require("harpoon"):list():prev() end,
 			desc = "previous entry",
 		},
+		{
+			"<leader>h1",
+			function() require("harpoon"):list():select(1) end,
+			desc = "first entry",
+		},
+		{
+			"<leader>h2",
+			function() require("harpoon"):list():select(2) end,
+			desc = "second entry",
+		},
+		{
+			"<leader>h3",
+			function() require("harpoon"):list():select(3) end,
+			desc = "third entry",
+		},
+		{
+			"<leader>h4",
+			function() require("harpoon"):list():select(4) end,
+			desc = "fourth entry",
+		},
 	},
 }

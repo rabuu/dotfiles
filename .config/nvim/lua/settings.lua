@@ -9,7 +9,7 @@ vim.opt.shiftwidth = 4
 
 vim.opt.number = true
 
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "number"
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", extends = "…" }
@@ -40,5 +40,5 @@ vim.opt.confirm = true
 
 vim.opt.shortmess = "Ic"
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
