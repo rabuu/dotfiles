@@ -17,4 +17,6 @@ if status is-interactive
     alias lt 'eza -T --git-ignore'
 
     alias dots '/usr/bin/git --git-dir="$XDG_DATA_HOME/dotfiles" --work-tree="$HOME"'
+
+    zoxide init fish | source
 end
