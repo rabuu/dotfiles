@@ -1,6 +1,6 @@
 [user]
 	name = Rasmus Buurman
-	email = dev@rbuurman.de
+	email = rasmus@rbuurman.de
 [advice]
 	detachedHead = false
 	pushNonFastForward = false
