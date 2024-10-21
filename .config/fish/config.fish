@@ -18,5 +18,11 @@ if status is-interactive
 
     alias dots '/usr/bin/git --git-dir="$XDG_DATA_HOME/dotfiles" --work-tree="$HOME"'
 
+    alias abandon='disown && exit'
+    abbr ab abandon
+
+    abbr zat zathura
+    abbr ok okular
+
     zoxide init fish | source
 end
