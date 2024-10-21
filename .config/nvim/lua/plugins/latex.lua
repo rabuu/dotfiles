@@ -14,10 +14,10 @@ return {
 	end,
 	keys = {
 		{
-			"<leader>vc",
+			"<leader>cc",
 			"<cmd>VimtexCompile<cr>",
 			ft = "tex",
-			desc = "Compile LaTeX file",
+			desc = "compile LaTeX file",
 		},
 	},
 }
