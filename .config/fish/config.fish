@@ -24,5 +24,8 @@ if status is-interactive
     abbr zat zathura
     abbr ok okular
 
+    alias dev 'nix develop --command fish'
+
     zoxide init fish | source
+    starship init fish | source
 end
