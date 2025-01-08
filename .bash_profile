@@ -25,6 +25,6 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_TARGET_DIR="$XDG_DATA_HOME/cargo/target"
 
-export BAT_THEME='base16'
+export BAT_THEME='GitHub'
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
