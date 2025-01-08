@@ -1,0 +1,13 @@
+window-decoration = false
+window-padding-x = 4
+window-padding-y = 0
+window-padding-color = extend
+
+font-size = 10
+
+theme = NvimLight
+background = ffffff
+
+cursor-color = 000000
+cursor-style = bar
+cursor-style-blink = false
