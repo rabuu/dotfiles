@@ -140,8 +140,8 @@ History Items[$e]=file:$HOME/Nextcloud
 AccentColor=146,110,228
 ColorSchemeHash=f13a5f93a8d2186748a87eaf56ec9fcef24073d5
 LastUsedCustomAccentColor=146,110,228
-TerminalApplication=alacritty
-TerminalService=Alacritty.desktop
+TerminalApplication=ghostty
+TerminalService=com.mitchellh.ghostty.desktop
 
 [KDE]
 LookAndFeelPackage=org.kde.breezetwilight.desktop
@@ -149,7 +149,7 @@ LookAndFeelPackage=org.kde.breezetwilight.desktop
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=false
+Breadcrumb Navigation=true
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
