@@ -8,10 +8,9 @@
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
 templates:
   params:
-#    author-name:
-#    author-email:
-#    copyright:
-#    github-username:
+    author-email: rasmus@rbuurman.de
+    author-name: Rasmus Buurman
+    github-username: rabuu
 
 # The following parameter specifies Stack's output styles; STYLES is a
 # colon-delimited sequence of key=value, where 'key' is a style name and
