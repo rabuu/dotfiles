@@ -12,6 +12,7 @@ export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
 export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$XDG_DATA_HOME/coursier/bin:$PATH"
+export PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
 
 export EDITOR='nvim'
 export PAGER='bat'
