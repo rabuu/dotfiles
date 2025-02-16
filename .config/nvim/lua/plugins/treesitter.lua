@@ -7,15 +7,10 @@ return {
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
 		opts = {
 			ensure_installed = {
-				"c",
 				"comment",
-				"cpp",
 				"diff",
 				"gitcommit",
-				"latex",
-				"markdown",
 				"markdown_inline",
-				"rust",
 			},
 			auto_install = true,
 			highlight = { enable = true },

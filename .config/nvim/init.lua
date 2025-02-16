@@ -1,5 +1,4 @@
 require("settings")
-require("colorscheme")
 require("leader")
 require("mappings")
 require("autocmds")
@@ -30,3 +29,5 @@ require("lazy").setup("plugins", {
 		backdrop = 100,
 	},
 })
+
+require("colorscheme")
