@@ -21,13 +21,13 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=177,152,235
+BackgroundAlternate=148,150,153
 BackgroundNormal=252,252,252
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=112,125,138
-ForegroundLink=118,54,221
+ForegroundLink=104,107,111
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=35,38,41
@@ -37,11 +37,11 @@ ForegroundVisited=155,89,182
 [Colors:Complementary]
 BackgroundAlternate=27,30,32
 BackgroundNormal=42,46,50
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=161,169,177
-ForegroundLink=209,199,242
+ForegroundLink=196,198,202
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -51,11 +51,11 @@ ForegroundVisited=155,89,182
 [Colors:Header]
 BackgroundAlternate=239,240,241
 BackgroundNormal=222,224,226
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=112,125,138
-ForegroundLink=118,54,221
+ForegroundLink=76,78,81
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=35,38,41
@@ -77,13 +77,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=178,153,236
-BackgroundNormal=178,153,236
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+BackgroundAlternate=149,151,154
+BackgroundNormal=149,151,154
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=0,0,0
-ForegroundLink=118,54,221
+ForegroundLink=76,78,81
 ForegroundNegative=176,55,69
 ForegroundNeutral=198,92,0
 ForegroundNormal=0,0,0
@@ -93,11 +93,11 @@ ForegroundVisited=155,89,182
 [Colors:Tooltip]
 BackgroundAlternate=239,240,241
 BackgroundNormal=247,247,247
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=112,125,138
-ForegroundLink=118,54,221
+ForegroundLink=76,78,81
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=35,38,41
@@ -107,11 +107,11 @@ ForegroundVisited=155,89,182
 [Colors:View]
 BackgroundAlternate=247,247,247
 BackgroundNormal=255,255,255
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=112,125,138
-ForegroundLink=118,54,221
+ForegroundLink=104,107,111
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=35,38,41
@@ -121,29 +121,24 @@ ForegroundVisited=155,89,182
 [Colors:Window]
 BackgroundAlternate=227,229,231
 BackgroundNormal=239,240,241
-DecorationFocus=146,110,228
-DecorationHover=146,110,228
-ForegroundActive=146,110,228
+DecorationFocus=104,107,111
+DecorationHover=104,107,111
+ForegroundActive=104,107,111
 ForegroundInactive=112,125,138
-ForegroundLink=118,54,221
+ForegroundLink=76,78,81
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
-[DirSelect Dialog]
-DirSelectDialog Size=1278,1015
-History Items[$e]=file:$HOME/Nextcloud
-
 [General]
-AccentColor=146,110,228
+AccentColor=104,107,111
 ColorSchemeHash=f13a5f93a8d2186748a87eaf56ec9fcef24073d5
-LastUsedCustomAccentColor=146,110,228
-TerminalApplication=ghostty
-TerminalService=com.mitchellh.ghostty.desktop
+LastUsedCustomAccentColor=104,107,111
 
 [KDE]
+AnimationDurationFactor=0.7071067811865475
 LookAndFeelPackage=org.kde.breezetwilight.desktop
 
 [KFileDialog Settings]
