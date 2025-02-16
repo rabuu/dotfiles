@@ -1,5 +1,6 @@
 if status is-interactive
     set fish_greeting
+    set fish_autosuggestion_enabled 0
 
     alias cp 'cp --interactive --verbose'
     alias mv 'mv --interactive --verbose'
