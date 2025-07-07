@@ -23,7 +23,7 @@ require("lazy").setup("plugins", {
 		},
 	},
 	install = {
-		colorscheme = { "default" },
+		colorscheme = { "gruvbox" },
 	},
 	ui = {
 		backdrop = 100,
