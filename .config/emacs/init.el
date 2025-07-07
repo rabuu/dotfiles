@@ -39,6 +39,8 @@
 
   :hook
   (prog-mode . display-line-numbers-mode)
+  (prog-mode . hl-line-mode)
+  (text-mode . hl-line-mode)
 
   :config
   (set-face-attribute 'default nil :family "JetBrainsMono Nerd Font" :height 100)
@@ -47,7 +49,6 @@
   (load custom-file 'noerror 'nomessage)
 
   :init
-  (global-hl-line-mode 1)
   (global-auto-revert-mode 1)
   (savehist-mode 1)
   (file-name-shadow-mode 1)
@@ -62,17 +63,14 @@
   :custom
   (dired-listing-switches "-lah --group-directories-first")
   (dired-dwim-target t)
-  (dired-kill-when-opening-new-dired-buffer t))
+  (dired-kill-when-opening-new-dired-buffer t)
+
+  :hook
+  (dired-mode . hl-line-mode))
 
 (use-package diredfl
   :ensure t
   :init (diredfl-global-mode))
-
-(use-package nerd-icons-dired
-  :if my/icons-enabled
-  :ensure t
-  :defer t
-  :hook (dired-mode . nerd-icons-dired-mode))
 
 (use-package eldoc
   :ensure nil
@@ -151,6 +149,9 @@
   :ensure t
   :defer t
   :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package vterm
+  :ensure t)
 
 (provide 'init)
 ;;; init.el ends here
