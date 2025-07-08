@@ -49,7 +49,7 @@ return {
 		"rabuu/polarity.nvim",
 		dependencies = { "neovim/nvim-lspconfig" },
 		opts = {
-			auto_format = true,
+			auto_format = false,
 		},
 	},
 
